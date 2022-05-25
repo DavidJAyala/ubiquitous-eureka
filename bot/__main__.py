@@ -9,7 +9,7 @@ from sys import executable
 from telegram import ParseMode
 from telegram.ext import CommandHandler
 from telegraph import Telegraph
-from wserver import start_server_async
+# from wserver import start_server_async
 from bot import bot, app, dispatcher, updater, botStartTime, IGNORE_PENDING_REQUESTS, IS_VPS, PORT, alive, web, OWNER_ID, AUTHORIZED_CHATS, telegraph_token
 from bot.helper.ext_utils import fs_utils
 from bot.helper.telegram_helper.bot_commands import BotCommands
@@ -223,8 +223,8 @@ botcmds = [
 
 def main():
     fs_utils.start_cleanup()
-    if IS_VPS:
-        asyncio.get_event_loop().run_until_complete(start_server_async(PORT))
+    # if IS_VPS:
+        # asyncio.get_event_loop().run_until_complete(start_server_async(PORT))
     # Check if the bot is restarting
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
